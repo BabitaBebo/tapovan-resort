@@ -1,3 +1,5 @@
+
+
 const tabItems = document.querySelectorAll(".tab-items"); //about us facilities rooms
 const tabContentItems = document.querySelectorAll(".tab-content-item"); //para and image
 
@@ -35,6 +37,18 @@ async function handleFormSubmit(event) {
     const responseData = await getClientDetails({ url, formData });
 
     console.log({ responseData });
+
+    if(responseData.statusCode == 400)
+    {
+      alert(responseData.message);
+     // form.reset();
+    }
+
+    if(responseData.statusCode == 200)
+    {
+      alert(responseData.message);
+      form.reset();
+    }
   } catch (error) {
     console.error(error);
   }
@@ -197,3 +211,4 @@ tabItems.forEach((item) => item.addEventListener("click", selectItem));
 //   document.getElementById("root").innerText = data;
 
 // }
+

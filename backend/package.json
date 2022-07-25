@@ -3,8 +3,8 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "dev": "nodemone backend/dev",
-    "start": "node backend/bin/www"
+    "dev": "nodemon backend/dev",
+    "start": "node bin/www"
   },
   "dependencies": {
     "cookie-parser": "^1.4.6",
